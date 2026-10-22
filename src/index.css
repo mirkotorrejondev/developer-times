@@ -1,0 +1,271 @@
+@font-face {
+  font-family: 'Chomsky';
+  src: local('Chomsky'), url(./fonts/Chomsky.woff) format('woff');
+}
+
+
+:root {
+  --ink: #000;
+  --paper: #fff;
+  --rule: #333;
+  --muted: #8a8a8a;
+  --font-display: 'Chomsky', 'Old English Text MT', serif;
+  --font-text: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-text);
+  line-height: 1.45;
+  padding: 1.2rem 2.2rem;
+}
+
+h1, h2, h3, p, figure, blockquote, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+img { max-width: 100%; }
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 2rem;
+}
+
+/* ---------- Masthead ---------- */
+.masthead__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  line-height: 1.1;
+  padding: 0.5rem 0 0.2rem;
+  overflow-wrap: anywhere;
+}
+
+.masthead__bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.15rem 2rem;
+  font-size: 0.8rem;
+  border-top: 4px solid var(--ink);
+  border-bottom: 4px solid var(--ink);
+}
+
+/* ---------- Layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 0.6rem;
+  padding: 1.5rem 5.5rem 0;
+  align-items: start;
+}
+
+.card {
+  border: 1px solid var(--rule);
+  padding: 1.7rem 1.7rem;
+  min-width: 0;
+}
+
+/* ---------- Profile ---------- */
+.profile__figure { text-align: center; }
+.profile__photo {
+  display: block;
+  width: min(100%, 368px);
+  aspect-ratio: 122 / 154;
+  object-fit: cover;
+  margin: 1.2rem auto 0.4rem;
+}
+.profile__figure figcaption { font-size: 0.8rem; }
+
+.profile__name {
+  font-weight: 400;
+  font-size: 2.23rem;
+  text-align: center;
+  margin-top: 0.6rem;
+  padding-bottom: 0.2rem;
+  position: relative;
+}
+.profile__name::after {
+  content: '';
+  display: block;
+  width: 90px;
+  border-bottom: 1px solid var(--ink);
+  margin: 0.15rem auto 0;
+}
+
+.profile__quote {
+  font-size: 2.23rem;
+  text-align: center;
+  margin: 0.6rem 0 0.8rem;
+}
+
+.profile__bio {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1rem;
+  font-size: 1rem;
+  padding-bottom: 0.7rem;
+}
+.profile__byline { font-weight: 700; margin-bottom: 0.4rem; }
+
+/* ---------- Languages ---------- */
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 0.5rem 1rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 0.7rem 0;
+  font-size: 1rem;
+}
+.languages li { display: flex; align-items: center; gap: 1.2rem; }
+.languages__flag { border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+
+/* ---------- Skills ---------- */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding-top: 0.8rem;
+}
+.skills__col { padding: 0 0.7rem; min-width: 0; }
+.skills__col + .skills__col { border-left: 1px solid var(--rule); }
+.skills__col h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+.skills__col li {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 0.3rem;
+}
+
+.skill-icon {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Projects ---------- */
+.projects { border-left: 1px solid var(--rule); padding-left: 0.6rem; min-width: 0; }
+.projects__title {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.23rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.1rem;
+  margin-bottom: 0.8rem;
+}
+.projects__title::after {
+  content: '';
+  display: block;
+  width: 150px;
+  border-bottom: 1px solid var(--ink);
+  margin: 0 auto;
+}
+
+
+.project {
+  display: flex;
+  flex-direction: row;
+  gap: 0.6rem;
+  padding: 0.9rem 0 0.8rem;
+  border-bottom: 1px solid var(--rule);
+}
+.project:first-of-type { padding-top: 0; }
+.project__head {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  max-width: 12rem;
+  min-width: 12rem;
+  font-weight: 700;
+  font-size: 1.35rem;
+}
+.project__title {
+  font-size: 1.35rem;
+}
+.project__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: 1rem;
+}
+.project__image {
+  width: 100%;
+  border: 1px solid var(--muted);
+  aspect-ratio: 78 / 42;
+  object-fit: fill;
+}
+
+.project__image--empty {
+  visibility: hidden;
+}
+
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.7rem 0;
+}
+.project__tags li {
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 0 0.7rem;
+  font-size: 1rem;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 860px) {
+  body { padding: 0.8rem 1rem; }
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 1rem 0 0; }
+  .projects { border-left: 0; padding-left: 0; margin-top: 1.5rem; }
+  .masthead__bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0.3rem 1rem;
+    text-align: center;
+  }
+  .profile__photo { width: min(100%, 260px); }
+  .project__head { max-width: 10rem; }
+  .project__image--empty { display: none; } 
+}
+
+@media (max-width: 600px) {
+  html { font-size: 16px; }
+  body { padding: 0.6rem 0.8rem; }
+  .masthead__title { font-size: 2rem; }
+  .card { padding: 1rem; }
+
+  .profile__name,
+  .profile__quote,
+  .projects__title { font-size: 1.5rem; }
+  .profile__bio { grid-template-columns: minmax(0, 1fr); }
+
+  .languages { flex-direction: column; align-items: flex-start; }
+
+  .skills { grid-template-columns: minmax(0, 1fr); }
+  .skills__col { padding: 0.6rem 0; }
+  .skills__col + .skills__col { border-left: 0; border-top: 1px solid var(--rule); }
+
+  .project { flex-direction: column; gap: 0.5rem; }
+  .project__head { max-width: none; flex-direction: row; flex-wrap: wrap; align-items: baseline; gap: 0.2rem 0.6rem; }
+  .project__tags { margin: 0.3rem 0 0; }
+}
